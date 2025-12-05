@@ -20,7 +20,7 @@ export default function TermsPage() {
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Agreement to Terms</h2>
                     <p className={styles.text}>
-                        By accessing or using NextQuest ("the App"), you agree to be bound by these Terms of
+                        By accessing or using NextQuest (&quot;the App&quot;), you agree to be bound by these Terms of
                         Service. If you disagree with any part of these terms, you may not access or use the App.
                     </p>
                 </section>
@@ -57,7 +57,7 @@ export default function TermsPage() {
                             You retain ownership of any content you create, upload, or share through the App,
                             including but not limited to game notes, custom lists, and ratings. By using the App,
                             you grant us a license to store, display, and process your content solely for the
-                            purpose of providing the App's services.
+                            purpose of providing the App&apos;s services.
                         </p>
                     </div>
                 </section>
@@ -83,7 +83,7 @@ export default function TermsPage() {
                         <li>To transmit any malicious code or viruses</li>
                         <li>To spam, harass, or abuse other users</li>
                         <li>To impersonate any person or entity</li>
-                        <li>To interfere with or disrupt the App's services</li>
+                        <li>To interfere with or disrupt the App&apos;s services</li>
                         <li>To collect or harvest information about other users</li>
                     </ul>
                 </section>
@@ -97,7 +97,7 @@ export default function TermsPage() {
                         data, use, goodwill, or other intangible losses, resulting from your use of the App.
                     </p>
                     <p className={styles.text}>
-                        The App is provided "as is" and "as available" without any warranties, expressed or
+                        The App is provided &quot;as is&quot; and &quot;as available&quot; without any warranties, expressed or
                         implied. We do not guarantee that the App will be error-free, secure, or available at
                         all times.
                     </p>
@@ -108,7 +108,7 @@ export default function TermsPage() {
                     <p className={styles.text}>
                         You agree to defend, indemnify, and hold harmless Victor Danger Valentine and its
                         affiliates from any claims, damages, obligations, losses, liabilities, costs, or debt,
-                        and expenses (including attorney's fees) arising from your use of the App or violation
+                        and expenses (including attorney&apos;s fees) arising from your use of the App or violation
                         of these Terms.
                     </p>
                 </section>

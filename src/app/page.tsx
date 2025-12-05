@@ -29,8 +29,8 @@ export default function HomePage() {
                         <span className={`${styles.statusPill} ${styles.statusDropped}`}>Dropped</span>
                     </div>
                     <p className={styles.featureDescription}>
-                        Organize your gaming journey with clear status categories. Track what you're playing,
-                        what's next, what you've finished, and what you've set aside.
+                        Organize your gaming journey with clear status categories. Track what you&apos;re playing,
+                        what&apos;s next, what you&apos;ve finished, and what you&apos;ve set aside.
                     </p>
                 </div>
             </section>

@@ -45,7 +45,7 @@ export default function SupportPage() {
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Get Help</h2>
                     <p className={styles.text}>
-                        If you're experiencing an issue with NextQuest, here's how to reach us and what
+                        If you&apos;re experiencing an issue with NextQuest, here&apos;s how to reach us and what
                         information helps us debug and assist you.
                     </p>
                 </section>

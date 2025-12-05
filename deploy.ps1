@@ -71,9 +71,52 @@ Write-Host "🌿 Setting branch to main..." -ForegroundColor Yellow
 git branch -M main
 
 Write-Host ""
-Write-Host "📤 Pushing to GitHub..." -ForegroundColor Yellow
-Write-Host "   (You may be prompted for credentials)" -ForegroundColor Gray
-git push -u origin main
+Write-Host "📥 Checking remote for existing content..." -ForegroundColor Yellow
+$remoteExists = git ls-remote --heads origin main 2>$null
+
+if ($remoteExists) {
+    Write-Host "⚠️  Remote repository has existing content" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Options:" -ForegroundColor Cyan
+    Write-Host "1. Pull and merge remote changes (recommended if you want to keep existing content)"
+    Write-Host "2. Force push (will overwrite remote - use if you want to replace everything)"
+    Write-Host ""
+    $choice = Read-Host "Choose option (1 or 2)"
+
+    if ($choice -eq "1") {
+        Write-Host ""
+        Write-Host "📥 Pulling remote changes..." -ForegroundColor Yellow
+        git pull origin main --allow-unrelated-histories --no-edit
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "⚠️  Merge conflicts may exist. Please resolve them manually." -ForegroundColor Red
+            Write-Host "   Then run: git add . && git commit && git push origin main" -ForegroundColor Yellow
+            exit 1
+        }
+        Write-Host "✅ Merged successfully" -ForegroundColor Green
+    }
+    elseif ($choice -eq "2") {
+        Write-Host ""
+        Write-Host "⚠️  WARNING: This will overwrite all content on the remote!" -ForegroundColor Red
+        $confirm = Read-Host "Are you sure? Type 'yes' to continue"
+        if ($confirm -eq "yes") {
+            Write-Host "📤 Force pushing to GitHub..." -ForegroundColor Yellow
+            git push -u origin main --force
+        }
+        else {
+            Write-Host "❌ Cancelled" -ForegroundColor Yellow
+            exit 0
+        }
+    }
+    else {
+        Write-Host "❌ Invalid choice. Cancelling." -ForegroundColor Red
+        exit 1
+    }
+}
+else {
+    Write-Host "📤 Pushing to GitHub..." -ForegroundColor Yellow
+    Write-Host "   (You may be prompted for credentials)" -ForegroundColor Gray
+    git push -u origin main
+}
 
 Write-Host ""
 Write-Host "✅ Push complete!" -ForegroundColor Green

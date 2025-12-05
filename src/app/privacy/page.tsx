@@ -20,7 +20,7 @@ export default function PrivacyPage() {
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Introduction</h2>
                     <p className={styles.text}>
-                        NextQuest ("we", "our", or "us") is committed to protecting your privacy. This Privacy
+                        NextQuest (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy
                         Policy explains how we collect, use, disclose, and safeguard your information when you
                         use our mobile application.
                     </p>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
                     <h2 className={styles.sectionTitle}>How We Use Your Information</h2>
                     <p className={styles.text}>We use the collected information to:</p>
                     <ul className={styles.list}>
-                        <li>Provide and maintain the app's core functionality</li>
+                        <li>Provide and maintain the app&apos;s core functionality</li>
                         <li>Sync your data across devices</li>
                         <li>Enable social features (public lists, sharing)</li>
                         <li>Improve app performance and fix bugs</li>
@@ -89,11 +89,11 @@ export default function PrivacyPage() {
                     </p>
                     <ul className={styles.list}>
                         <li>
-                            <strong>Google Sign-In:</strong> For authentication. See Google's Privacy Policy
+                            <strong>Google Sign-In:</strong> For authentication. See Google&apos;s Privacy Policy
                             for how they handle your data.
                         </li>
                         <li>
-                            <strong>Apple Sign-In:</strong> For authentication. See Apple's Privacy Policy
+                            <strong>Apple Sign-In:</strong> For authentication. See Apple&apos;s Privacy Policy
                             for how they handle your data.
                         </li>
                         <li>
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
                 </section>
 
                 <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Children's Privacy</h2>
+                    <h2 className={styles.sectionTitle}>Children&apos;s Privacy</h2>
                     <p className={styles.text}>
                         NextQuest is not intended for children under 13 years of age. We do not knowingly
                         collect personal information from children under 13. If you believe we have collected
@@ -160,7 +160,7 @@ export default function PrivacyPage() {
                     <h2 className={styles.sectionTitle}>Changes to This Privacy Policy</h2>
                     <p className={styles.text}>
                         We may update this Privacy Policy from time to time. We will notify you of any changes
-                        by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                        by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
                         You are advised to review this Privacy Policy periodically for any changes.
                     </p>
                 </section>
