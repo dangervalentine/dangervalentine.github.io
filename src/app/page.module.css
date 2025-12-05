@@ -1,0 +1,219 @@
+.section {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: var(--font-size-xlarge);
+    font-weight: 700;
+    color: var(--color-primary-main);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.statusRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.statusPill {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: var(--font-size-body);
+}
+
+.statusOngoing {
+    color: var(--color-accent-yellow);
+    background-color: var(--color-accent-yellow);
+    background-color: transparent;
+}
+
+.statusBacklog {
+    color: var(--color-accent-purple);
+    background-color: transparent;
+}
+
+.statusCompleted {
+    color: var(--color-accent-green);
+    background-color: transparent;
+}
+
+.statusDropped {
+    color: var(--color-accent-coral);
+    background-color: transparent;
+}
+
+.featureDescription {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.discoverContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.highlightNumber {
+    color: var(--color-primary-main);
+    font-weight: 700;
+}
+
+.highlightIgdb {
+    color: var(--color-primary-main);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.highlightIgdb:hover {
+    color: var(--color-primary-light);
+}
+
+.highlightFree {
+    color: var(--color-primary-main);
+    font-weight: 700;
+}
+
+.metadataInfo,
+.freeInfo {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.8;
+    margin-top: var(--spacing-md);
+}
+
+.ctaSection {
+    text-align: center;
+    padding: var(--spacing-xxxl);
+    background-color: var(--color-background-darker);
+    border-radius: var(--border-radius);
+    border: var(--border-width-thin) solid var(--color-secondary-dark);
+}
+
+.ctaTitle {
+    font-size: var(--font-size-xlarge);
+    font-weight: 700;
+    color: var(--color-primary-main);
+    margin-bottom: var(--spacing-xl);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xxxl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.stepNumber {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary-main);
+    color: var(--color-text-inverse);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xlarge);
+    font-weight: 700;
+    font-family: var(--font-family-title);
+}
+
+.stepTitle {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.stepDescription {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.whySection {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.whyText {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.whyText:last-child {
+    margin-bottom: 0;
+}
+
+.supportTeaser {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-xxxl);
+    background-color: var(--color-background-darker);
+    border-radius: var(--border-radius);
+    border: var(--border-width-thin) solid var(--color-secondary-dark);
+}
+
+.teaserText {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.teaserText:last-child {
+    margin-bottom: 0;
+}
+
+.teaserText a {
+    color: var(--color-primary-main);
+    font-weight: 500;
+}
+
+.teaserText a:hover {
+    color: var(--color-primary-light);
+}
+
+@media (max-width: 768px) {
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}

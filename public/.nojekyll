@@ -1,0 +1,2 @@
+# Prevent Jekyll from processing the site
+# GitHub Pages uses Jekyll by default, but Next.js doesn't need it

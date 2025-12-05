@@ -1,0 +1,90 @@
+/* Theme color variables - Dark Mode (default) */
+:root[data-theme="dark"],
+:root:not([data-theme]) {
+    /* Primary Colors */
+    --color-primary-light: #AFC6FF;
+    --color-primary-main: #82AAFF;
+    --color-primary-dark: #4976A1;
+
+    /* Secondary Colors */
+    --color-secondary-light: #A3B7C7;
+    --color-secondary-main: #8DA0AF;
+    --color-secondary-dark: #2A3F51;
+
+    /* Accent Colors */
+    --color-accent-cyan: #7fdbca;
+    --color-accent-coral: #FC9867;
+    --color-accent-green: #C3E88D;
+    --color-accent-pink: #F07178;
+    --color-accent-yellow: #FFCB6B;
+    --color-accent-purple: #C792EA;
+
+    /* Neutral Colors */
+    --color-neutral-white: #FFFFFF;
+    --color-neutral-light-gray: #D6DEEB;
+    --color-neutral-gray: #637777;
+    --color-neutral-dark-gray: #1D3B53;
+    --color-neutral-black: #000000;
+
+    /* Background Colors */
+    --color-background-light: #D6DEEB;
+    --color-background-medium: #1D3B53;
+    --color-background-dark: #011627;
+    --color-background-darker: #020f1d;
+    --color-background-darkest: #01111d;
+
+    /* Text Colors */
+    --color-text-primary: #D6DEEB;
+    --color-text-secondary: #9DB2C0;
+    --color-text-inverse: #011627;
+    --color-text-muted: #637777;
+
+    /* Current theme indicator */
+    --current-background: var(--color-background-dark);
+    --current-text: var(--color-text-primary);
+}
+
+/* Theme color variables - Light Mode */
+:root[data-theme="light"] {
+    /* Primary Colors */
+    --color-primary-light: #6FBEF6;
+    --color-primary-main: #4876D6;
+    --color-primary-dark: #288ED7;
+
+    /* Secondary Colors */
+    --color-secondary-light: #A9C4D8;
+    --color-secondary-main: #87A4B8;
+    --color-secondary-dark: #5E7484;
+
+    /* Accent Colors */
+    --color-accent-cyan: #176D67;
+    --color-accent-coral: #9B3F3D;
+    --color-accent-green: #0B6B51;
+    --color-accent-pink: #92215F;
+    --color-accent-yellow: #7A5B00;
+    --color-accent-purple: #6B2FA0;
+
+    /* Neutral Colors */
+    --color-neutral-white: #FFFFFF;
+    --color-neutral-light-gray: #93A1A1;
+    --color-neutral-gray: #697098;
+    --color-neutral-dark-gray: #403F53;
+    --color-neutral-black: #000000;
+
+    /* Background Colors */
+    --color-background-light: #FBFBFB;
+    --color-background-medium: #F6F6F6;
+    --color-background-dark: #EFEFEF;
+    --color-background-darker: #E7ECF2;
+    --color-background-darkest: #D6E4F2;
+
+    /* Text Colors */
+    --color-text-primary: #403F53;
+    --color-text-secondary: #697098;
+    --color-text-inverse: #FBFBFB;
+    --color-text-muted: #93A1A1;
+
+    /* Current theme indicator */
+    --current-background: var(--color-background-light);
+    --current-text: var(--color-text-primary);
+}

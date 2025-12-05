@@ -1,0 +1,188 @@
+@import './theme.css';
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FiraCode';
+    src: url('/fonts/FiraCode-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Typography Scale */
+:root {
+    --font-size-tiny: 10px;
+    --font-size-small: 12px;
+    --font-size-body: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 22px;
+
+    /* Line Heights */
+    --line-height-tiny: 13px;
+    --line-height-small: 15.6px;
+    --line-height-body: 18.2px;
+    --line-height-medium: 20.8px;
+    --line-height-large: 23.4px;
+    --line-height-xlarge: 26.4px;
+
+    /* Font Families */
+    --font-family-title: 'Outfit', sans-serif;
+    --font-family-regular: 'FiraCode', monospace;
+    --font-family-bold: 'Outfit', sans-serif;
+    --font-family-medium: 'Outfit', sans-serif;
+
+    /* Spacing Scale */
+    --spacing-xs: 2px;
+    --spacing-sm: 4px;
+    --spacing-md: 8px;
+    --spacing-lg: 12px;
+    --spacing-xl: 16px;
+    --spacing-xxl: 20px;
+    --spacing-xxxl: 24px;
+
+    /* Border Radius */
+    --border-radius: 8px;
+    --border-radius-inner: 4px;
+
+    /* Border Widths */
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    --border-width-thick: 5px;
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-family-regular);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text-primary);
+    background-color: var(--current-background);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-size-xlarge);
+    line-height: var(--line-height-xlarge);
+}
+
+h2 {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
+}
+
+h3 {
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-medium);
+}
+
+a {
+    color: var(--color-primary-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary-light);
+}
+
+/* Accent color utilities */
+.accent-cyan {
+    color: var(--color-accent-cyan);
+}
+
+.accent-coral {
+    color: var(--color-accent-coral);
+}
+
+.accent-green {
+    color: var(--color-accent-green);
+}
+
+.accent-pink {
+    color: var(--color-accent-pink);
+}
+
+.accent-yellow {
+    color: var(--color-accent-yellow);
+}
+
+.accent-purple {
+    color: var(--color-accent-purple);
+}
+
+button {
+    font-family: var(--font-family-regular);
+    cursor: pointer;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.section {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
