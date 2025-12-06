@@ -59,3 +59,4 @@ Your code is pushed, but GitHub Pages needs to be configured to serve the built 
 5. Your site becomes available at `https://dangervalentine.github.io`
 
 The README will still be visible in the repository, but the website will serve your built Next.js site!
+

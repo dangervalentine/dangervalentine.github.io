@@ -128,3 +128,4 @@ Write-Host "3. Save the settings" -ForegroundColor White
 Write-Host "4. Check the Actions tab to see the deployment progress" -ForegroundColor White
 Write-Host ""
 Write-Host "Your site will be live at: https://dangervalentine.github.io" -ForegroundColor Green
+

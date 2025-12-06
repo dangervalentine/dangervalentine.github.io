@@ -34,3 +34,4 @@ export default function ScreenshotGrid({ screenshots = [] }: ScreenshotGridProps
         </div>
     );
 }
+

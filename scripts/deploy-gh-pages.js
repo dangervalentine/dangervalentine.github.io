@@ -47,3 +47,4 @@ console.log('  3. Select "GitHub Actions" as the source');
 console.log('\nOr use gh-pages CLI:');
 console.log('  npm install -g gh-pages');
 console.log('  gh-pages -d out');
+

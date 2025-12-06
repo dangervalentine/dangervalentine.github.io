@@ -87,3 +87,4 @@ export function initTheme(): void {
         setTheme(theme);
     }
 }
+

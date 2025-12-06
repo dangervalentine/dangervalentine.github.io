@@ -128,3 +128,4 @@ Edit `src/components/StoreButtons.tsx` with your actual App Store and Play Store
 ## License
 
 All Rights Reserved - Victor Danger Valentine
+
