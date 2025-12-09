@@ -14,6 +14,21 @@ export const metadata: Metadata = {
 export default function ChangelogPage() {
     const versions = [
         {
+            version: '1.2.2',
+            date: '2025-12-06',
+            summary: 'Note-Taking, and Search Experience',
+            highlights: [
+                'Clickable game metadata navigation - tap genres, themes, and franchises to discover similar games',
+                'Comprehensive note-taking system with sections, drag-and-drop reordering, and optimistic updates',
+                'Inline notes editing directly in the Personal Rating section',
+                'Game modes & player perspectives filtering (single-player, multiplayer, co-op, first-person, third-person, etc.)',
+                'Improved search experience with centralized filter management and better state handling',
+                'More accurate game release dates showing when games first launched',
+                'Enhanced welcome experience with smarter modal timing and helpful filter guidance',
+                'Account deletion with deliberate confirmation process',
+            ],
+        },
+        {
             version: '1.1.1',
             date: '2025-10-06',
             summary: 'Enhanced Discovery & Smooth Navigation',
@@ -99,4 +114,3 @@ export default function ChangelogPage() {
         </div>
     );
 }
-
