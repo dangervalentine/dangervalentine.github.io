@@ -1,0 +1,14 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "432YZ4SCUS.com.dangervalentine.nextquest",
+                "paths": [
+                    "/game/*",
+                    "/list/*"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.dangervalentine.nextquest",
+            "sha256_cert_fingerprints": [
+                "11:74:63:5B:94:21:A8:F1:40:58:98:01:DD:D8:D3:4C:17:9A:88:82:1B:25:75:53:A2:57:26:0C:CA:F7:BC:6F"
+            ]
+        }
+    }
+]
