@@ -1,15 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useEffect, useState, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { STORE_URLS } from '@/constants/storeUrls';
 
 export default function GamePageClient() {
-    const params = useParams();
-    // Handle both string and array (for catch-all routes)
-    const gameId = Array.isArray(params.id) ? params.id[0] : (params.id as string);
+    const searchParams = useSearchParams();
+    const gameId = useMemo(() => searchParams.get('id') ?? '', [searchParams]);
     const [isMobile, setIsMobile] = useState(false);
     const [redirectAttempted, setRedirectAttempted] = useState(false);
 
@@ -19,7 +18,7 @@ export default function GamePageClient() {
         const mobile = /Mobi|Android/i.test(userAgent);
         setIsMobile(mobile);
 
-        if (mobile && !redirectAttempted) {
+        if (mobile && gameId && !redirectAttempted) {
             setRedirectAttempted(true);
 
             // Try to open app with custom scheme as fallback
@@ -44,6 +43,23 @@ export default function GamePageClient() {
         }
     }, [gameId, redirectAttempted]);
 
+    // If no game ID in URL, show a message
+    if (!gameId) {
+        return (
+            <div className={styles.container}>
+                <div className={styles.content}>
+                    <h1 className={styles.title}>Game Not Found</h1>
+                    <p className={styles.description}>
+                        Please provide a valid game ID in the URL (e.g., /game?id=123).
+                    </p>
+                    <Link href="/" className={styles.backLink}>
+                        Back to Home
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -53,9 +69,7 @@ export default function GamePageClient() {
                         ? 'Opening the NextQuest app...'
                         : 'NextQuest is a mobile app. View this game on your phone to see the full details.'}
                 </p>
-                {gameId && (
-                    <p className={styles.gameId}>Game ID: {gameId}</p>
-                )}
+                <p className={styles.gameId}>Game ID: {gameId}</p>
 
                 {!isMobile && (
                     <div className={styles.storeButtons}>
