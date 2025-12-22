@@ -14,6 +14,21 @@ export const metadata: Metadata = {
 export default function ChangelogPage() {
     const versions = [
         {
+            version: '1.3.0',
+            date: '2025-12-22',
+            summary: 'Steam Integration & Enhanced Sharing',
+            highlights: [
+                'Share your favorite games with friends using the new native share button',
+                'Link your Steam account to import games and sync your library',
+                'Open game links directly in the app from web browsers with deep linking',
+                'Mark notes as complete with a simple long-press gesture',
+                'Migrate your local games to your account for cloud sync',
+                'Discover games faster by clicking genres, themes, and franchises from game details',
+                'Complete Steam integration with library sync, playtime tracking, and avatar syncing',
+                'Enhanced search with context-based seeding and improved filter management',
+            ],
+        },
+        {
             version: '1.2.2',
             date: '2025-12-06',
             summary: 'Note-Taking, and Search Experience',

@@ -35,7 +35,7 @@ export default function Footer() {
                             © {currentYear} Victor Danger Valentine
                         </p>
                         <p className={styles.rights}>All Rights Reserved</p>
-                        <p className={styles.version}>NextQuest v1.2.2</p>
+                        <p className={styles.version}>NextQuest v1.3.0</p>
                     </div>
                 </div>
             </div>
