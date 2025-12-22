@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--gap-md);
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -24,7 +24,7 @@
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(130, 170, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-main-rgb), 0.3);
 }
 
 .button:active {
@@ -34,6 +34,7 @@
 .buttonText {
     font-size: var(--font-size-small);
     font-weight: 400;
+    font-family: var(--font-family-regular);
 }
 
 .buttonTitle {
@@ -52,4 +53,3 @@
         width: 100%;
     }
 }
-

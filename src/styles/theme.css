@@ -42,6 +42,19 @@
     /* Current theme indicator */
     --current-background: var(--color-background-dark);
     --current-text: var(--color-text-primary);
+
+    /* RGB values for rgba() usage */
+    --color-accent-cyan-rgb: 127, 219, 202;
+    --color-accent-purple-rgb: 199, 146, 234;
+    --color-accent-pink-rgb: 240, 113, 120;
+    --color-accent-green-rgb: 195, 232, 141;
+    --color-accent-yellow-rgb: 255, 203, 107;
+    --color-accent-coral-rgb: 252, 152, 103;
+    --color-primary-main-rgb: 130, 170, 255;
+    --color-neutral-white-rgb: 255, 255, 255;
+    --color-neutral-black-rgb: 0, 0, 0;
+    --color-background-darkest-rgb: 1, 17, 29;
+    --color-text-primary-rgb: 214, 222, 235;
 }
 
 /* Theme color variables - Light Mode */
@@ -87,5 +100,17 @@
     /* Current theme indicator */
     --current-background: var(--color-background-light);
     --current-text: var(--color-text-primary);
-}
 
+    /* RGB values for rgba() usage */
+    --color-accent-cyan-rgb: 23, 109, 103;
+    --color-accent-purple-rgb: 107, 47, 160;
+    --color-accent-pink-rgb: 146, 33, 95;
+    --color-accent-green-rgb: 11, 107, 81;
+    --color-accent-yellow-rgb: 122, 91, 0;
+    --color-accent-coral-rgb: 155, 63, 61;
+    --color-primary-main-rgb: 72, 118, 214;
+    --color-neutral-white-rgb: 255, 255, 255;
+    --color-neutral-black-rgb: 0, 0, 0;
+    --color-background-darkest-rgb: 214, 228, 242;
+    --color-text-primary-rgb: 64, 63, 83;
+}

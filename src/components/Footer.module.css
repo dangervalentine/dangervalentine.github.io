@@ -14,7 +14,7 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    gap: var(--gap-lg);
     align-items: center;
     text-align: center;
 }
@@ -22,13 +22,14 @@
 .links {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-lg);
+    gap: var(--gap-md);
     justify-content: center;
 }
 
 .link {
     color: var(--color-text-secondary);
     font-size: var(--font-size-body);
+    font-family: var(--font-family-regular);
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -40,9 +41,10 @@
 .info {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--gap-xs);
     color: var(--color-text-muted);
     font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
 }
 
 .copyright,
@@ -62,4 +64,3 @@
         align-items: flex-end;
     }
 }
-

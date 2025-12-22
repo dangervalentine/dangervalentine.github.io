@@ -1,10 +1,11 @@
 import styles from './StoreButtons.module.css';
+import { STORE_URLS } from '@/constants/storeUrls';
 
 export default function StoreButtons() {
     return (
         <div className={styles.container}>
             <a
-                href="https://apps.apple.com/app/nextquest"
+                href={STORE_URLS.ios}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.button}
@@ -14,7 +15,7 @@ export default function StoreButtons() {
                 <span className={styles.buttonTitle}>App Store</span>
             </a>
             <a
-                href="https://play.google.com/store/apps/details?id=com.nextquest"
+                href={STORE_URLS.android}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.button}
@@ -26,4 +27,3 @@ export default function StoreButtons() {
         </div>
     );
 }
-

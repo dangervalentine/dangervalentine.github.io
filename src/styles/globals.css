@@ -56,7 +56,7 @@
     --font-family-bold: 'Outfit', sans-serif;
     --font-family-medium: 'Outfit', sans-serif;
 
-    /* Spacing Scale */
+    /* Spacing Scale - matches theme.ts */
     --spacing-xs: 2px;
     --spacing-sm: 4px;
     --spacing-md: 8px;
@@ -65,14 +65,42 @@
     --spacing-xxl: 20px;
     --spacing-xxxl: 24px;
 
-    /* Border Radius */
+    /* Gap spacing - matches theme.ts gaps */
+    --gap-xs: 4px;
+    --gap-sm: 8px;
+    --gap-md: 12px;
+    --gap-lg: 16px;
+
+    /* Padding scale - matches theme.ts padding */
+    --padding-xs: 4px;
+    --padding-sm: 8px;
+    --padding-md: 12px;
+    --padding-lg: 16px;
+    --padding-xl: 20px;
+    --padding-xxl: 24px;
+
+    /* Margin patterns - matches theme.ts margins */
+    --margin-horizontal-sm: 4px;
+    --margin-horizontal-md: 8px;
+    --margin-horizontal-lg: 12px;
+    --margin-horizontal-xl: 20px;
+    --margin-vertical-sm: 2px;
+    --margin-vertical-md: 8px;
+    --margin-vertical-lg: 16px;
+    --margin-vertical-xl: 16px;
+
+    /* Border Radius - matches theme.ts */
     --border-radius: 8px;
     --border-radius-inner: 4px;
 
-    /* Border Widths */
+    /* Border Widths - matches theme.ts borders */
     --border-width-thin: 1px;
     --border-width-medium: 2px;
     --border-width-thick: 5px;
+
+    /* Legacy variables for backward compatibility */
+    --nq-bg: var(--current-background);
+    --nq-text: var(--current-text);
 }
 
 /* Reset and Base Styles */
@@ -186,4 +214,3 @@ button {
 .text-secondary {
     color: var(--color-text-secondary);
 }
-
