@@ -270,7 +270,7 @@ export default function GamePageClient() {
         if (previewState === 'loading') {
             return (
                 <div className={styles.previewSection}>
-                    <div className={styles.previewLabel}>You're about to open</div>
+                    <div className={styles.previewLabel}>You&apos;re about to open</div>
                     <div className={styles.previewContainer}>
                         <div className={`${styles.previewCover} ${styles.previewSkeleton}`} aria-hidden />
                         <div className={styles.previewContent}>
@@ -305,7 +305,7 @@ export default function GamePageClient() {
 
             return (
                 <div className={styles.previewSection}>
-                    <div className={styles.previewLabel}>You're about to open</div>
+                    <div className={styles.previewLabel}>You&apos;re about to open</div>
                     <div className={styles.previewContainer}>
                         {previewData.coverUrl ? (
                             <div className={styles.previewCover}>
