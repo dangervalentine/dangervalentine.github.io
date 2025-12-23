@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import Image from 'next/image';
 import { STORE_URLS } from '@/constants/storeUrls';
+import { QRCodeSVG } from 'qrcode.react';
 
 type Platform = 'ios' | 'android' | 'other';
 type HandoffState = 'idle' | 'attempting' | 'fallback';
@@ -157,6 +158,19 @@ export default function GamePageClient() {
             }
         };
     }, []);
+
+    // Compute smart install URL for desktop QR code (must be before any conditional returns)
+    const installUrl = useMemo(() => {
+        if (typeof window === 'undefined' || !gameId) return '';
+
+        // Use NEXT_PUBLIC_QR_BASE_URL in dev (set to LAN IP), fallback to origin in prod
+        const base = process.env.NEXT_PUBLIC_QR_BASE_URL?.trim() || window.location.origin;
+
+        const url = new URL('/install', base);
+        url.searchParams.set('gameId', gameId);
+        url.searchParams.set('src', 'qr');
+        return url.toString();
+    }, [gameId]);
 
     // Fetch game preview when hydrated and gameId is available
     useEffect(() => {
@@ -370,11 +384,18 @@ export default function GamePageClient() {
                             {showFallback ? (
                                 <a
                                     href={storeUrl}
-                                    className={styles.primaryButton}
+                                    className={`${styles.storeBadgeLink} ${isAndroid ? styles.googlePlayBadge : styles.appStoreBadge}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={`Get NextQuest on ${storeName}`}
                                 >
-                                    Get NextQuest on {storeName}
+                                    <Image
+                                        src={isAndroid ? "/google_play_store.svg" : "/app_store.svg"}
+                                        alt={`Get NextQuest on ${storeName}`}
+                                        width={isAndroid ? 135 : 120}
+                                        height={40}
+                                        className={styles.storeBadge}
+                                    />
                                 </a>
                             ) : (
                                 <button
@@ -428,24 +449,72 @@ export default function GamePageClient() {
 
                     <h1 className={styles.title}>NextQuest is a mobile app</h1>
                     <p className={styles.description}>
-                        Open this link on your phone to continue.
+                        Scan the QR code on your phone to open the game or install the app.
                     </p>
 
                     {renderGamePreview()}
 
-                    <div className={styles.actions}>
-                        <a href={STORE_URLS.ios} className={styles.primaryButton} target="_blank" rel="noopener noreferrer">
-                            Download on App Store
-                        </a>
-                        <a href={STORE_URLS.android} className={styles.secondaryButton} target="_blank" rel="noopener noreferrer">
-                            Get it on Google Play
-                        </a>
+                    {/* Store Buttons and QR Code */}
+                    <div className={styles.storePicker}>
+                        {/* Both Store Badges Side by Side */}
+                        <div className={styles.storeBadgesContainer}>
+                            <a
+                                href={STORE_URLS.ios}
+                                className={`${styles.storeBadgeLink} ${styles.appStoreBadge}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Download on the App Store"
+                            >
+                                <Image
+                                    src="/app_store.svg"
+                                    alt="Download on the App Store"
+                                    width={120}
+                                    height={40}
+                                    className={styles.storeBadge}
+                                />
+                            </a>
+                            <a
+                                href={STORE_URLS.android}
+                                className={`${styles.storeBadgeLink} ${styles.googlePlayBadge}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Get it on Google Play"
+                            >
+                                <Image
+                                    src="/google_play_store.svg"
+                                    alt="Get it on Google Play"
+                                    width={135}
+                                    height={40}
+                                    className={styles.storeBadge}
+                                />
+                            </a>
+                        </div>
+
+                        {/* Single QR Code */}
+                        <div className={styles.qrCodeSection}>
+                            <div className={styles.qrCodeLabel}>
+                                Scan to open or install
+                            </div>
+                            <div className={styles.qrCodeContainer}>
+                                <div className={styles.qrCodeWrapper}>
+                                    <QRCodeSVG
+                                        value={installUrl}
+                                        size={160}
+                                        level="M"
+                                        includeMargin={false}
+                                        fgColor="currentColor"
+                                        bgColor="transparent"
+                                        style={{ color: 'var(--current-text)' }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.divider} />
 
                     <div className={styles.bottomRow}>
-                        <Link href="/" className={styles.linkButton}>
+                        <Link href="/" className={styles.backLink}>
                             Back to Home
                         </Link>
                     </div>

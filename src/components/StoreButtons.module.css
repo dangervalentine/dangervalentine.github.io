@@ -1,55 +1,78 @@
 .container {
     display: flex;
-    gap: var(--gap-md);
+    gap: 16px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .button {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-md) var(--spacing-xl);
-    background-color: var(--color-primary-main);
-    color: var(--color-text-inverse);
-    border-radius: var(--border-radius);
     text-decoration: none;
-    transition: all 0.2s ease;
-    border: var(--border-width-thin) solid var(--color-primary-main);
-    min-width: 180px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    line-height: 0;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: var(--color-primary-light);
-    border-color: var(--color-primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(var(--color-primary-main-rgb), 0.3);
+    opacity: 0.85;
 }
 
 .button:active {
     transform: translateY(0);
+    opacity: 0.75;
 }
 
-.buttonText {
-    font-size: var(--font-size-small);
-    font-weight: 400;
-    font-family: var(--font-family-regular);
+.badge {
+    display: block;
+    height: auto;
+    width: auto;
+    object-fit: contain;
 }
 
-.buttonTitle {
-    font-size: var(--font-size-medium);
-    font-weight: 700;
-    font-family: var(--font-family-title);
+/* Both badges at same height (40px) for visual consistency */
+/* App Store badge: 119.66407x40 - official SVG size */
+.appStoreButton .badge {
+    width: 120px;
+    height: 40px;
+}
+
+/* Google Play badge: scaled to match App Store height (40px) */
+/* Original SVG: 180x53.333, scaled: 135x40 (maintains aspect ratio) */
+.googlePlayButton .badge {
+    width: 135px;
+    height: 40px;
 }
 
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        gap: 12px;
     }
 
-    .button {
-        width: 100%;
+    .appStoreButton .badge {
+        width: 120px;
+        height: 40px;
+    }
+
+    .googlePlayButton .badge {
+        width: 135px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appStoreButton .badge {
+        width: 120px;
+        height: 40px;
+    }
+
+    .googlePlayButton .badge {
+        width: 135px;
+        height: 40px;
     }
 }
