@@ -17,11 +17,11 @@ export default function SupportPage() {
         },
         {
             question: 'How do I report a bug?',
-            answer: 'Please email us at nextquest@dangervalentine.com with details about the issue. Include your device model, OS version, app version, and steps to reproduce the bug. You can also report issues on our GitHub repository.',
+            answer: 'Please email us at support@nextquest.dev with details about the issue. Include your device model, OS version, app version, and steps to reproduce the bug. You can also report issues on our GitHub repository.',
         },
         {
             question: 'How do I request a feature?',
-            answer: 'We welcome feature requests! Email us at nextquest@dangervalentine.com or open an issue on our GitHub repository. Please describe the feature and how it would improve your experience.',
+            answer: 'We welcome feature requests! Email us at support@nextquest.dev or open an issue on our GitHub repository. Please describe the feature and how it would improve your experience.',
         },
         {
             question: 'Can I use NextQuest offline?',
@@ -55,8 +55,8 @@ export default function SupportPage() {
                     <div className={styles.contactInfo}>
                         <p className={styles.text}>
                             <strong>Email:</strong>{' '}
-                            <a href="mailto:nextquest@dangervalentine.com" className={styles.link}>
-                                nextquest@dangervalentine.com
+                            <a href="mailto:support@nextquest.dev" className={styles.link}>
+                                support@nextquest.dev
                             </a>
                         </p>
                         <p className={styles.text}>
@@ -115,8 +115,8 @@ export default function SupportPage() {
                         </p>
                         <p className={styles.text}>
                             To request deletion of your account and all associated data, please email us at{' '}
-                            <a href="mailto:nextquest@dangervalentine.com" className={styles.link}>
-                                nextquest@dangervalentine.com
+                            <a href="mailto:support@nextquest.dev" className={styles.link}>
+                                support@nextquest.dev
 
 
                             </a>
@@ -129,4 +129,3 @@ export default function SupportPage() {
         </div>
     );
 }
-

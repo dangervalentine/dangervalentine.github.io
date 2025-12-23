@@ -132,8 +132,8 @@ export default function PrivacyPage() {
                     </ul>
                     <p className={styles.text}>
                         To exercise these rights, please contact us at{' '}
-                        <a href="mailto:nextquest@dangervalentine.com" className={styles.link}>
-                            nextquest@dangervalentine.com
+                        <a href="mailto:support@nextquest.dev" className={styles.link}>
+                            support@nextquest.dev
                         </a>.
                     </p>
                 </section>
@@ -173,8 +173,8 @@ export default function PrivacyPage() {
                     </p>
                     <p className={styles.text}>
                         <strong>Email:</strong>{' '}
-                        <a href="mailto:nextquest@dangervalentine.com" className={styles.link}>
-                            nextquest@dangervalentine.com
+                        <a href="mailto:support@nextquest.dev" className={styles.link}>
+                            support@nextquest.dev
                         </a>
                     </p>
                 </section>

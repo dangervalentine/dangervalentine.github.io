@@ -147,8 +147,8 @@ export default function TermsPage() {
                     </p>
                     <p className={styles.text}>
                         <strong>Email:</strong>{' '}
-                        <a href="mailto:nextquest@dangervalentine.com" className={styles.link}>
-                            nextquest@dangervalentine.com
+                        <a href="mailto:support@nextquest.dev" className={styles.link}>
+                            support@nextquest.dev
                         </a>
                     </p>
                 </section>
@@ -156,4 +156,3 @@ export default function TermsPage() {
         </div>
     );
 }
-

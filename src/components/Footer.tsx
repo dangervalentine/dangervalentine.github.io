@@ -13,7 +13,7 @@ export default function Footer() {
                         <Link href="/privacy" className={styles.link}>Privacy</Link>
                         <Link href="/terms" className={styles.link}>Terms</Link>
                         <a
-                            href="https://github.com/dangervalentine/NextQuest"
+                            href="https://github.com/dangervalentine/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.link}
@@ -21,7 +21,7 @@ export default function Footer() {
                             GitHub
                         </a>
                         <a
-                            href="mailto:nextquest@dangervalentine.com
+                            href="mailto:support@nextquest.dev
 
 "
                             className={styles.link}
