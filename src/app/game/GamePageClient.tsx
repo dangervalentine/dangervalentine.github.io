@@ -150,14 +150,23 @@ export default function GamePageClient() {
         };
     }, [handoffState]);
 
-    // Cleanup timeout on unmount
+    // Auto-open deep link on mobile devices after page load
     useEffect(() => {
+        // Only auto-open on mobile devices
+        if (!isMobile || !gameId) return;
+
+        // Don't auto-open if we're already in fallback state (prevents loops)
+        if (handoffState === 'fallback') return;
+
+        // Auto-open after a short delay to allow page to render
+        const timeoutId = setTimeout(() => {
+            handleOpen();
+        }, 500);
+
         return () => {
-            if (fallbackTimeoutRef.current) {
-                clearTimeout(fallbackTimeoutRef.current);
-            }
+            clearTimeout(timeoutId);
         };
-    }, []);
+    }, [isMobile, gameId, handoffState, handleOpen]);
 
     // Compute smart install URL for desktop QR code (must be before any conditional returns)
     const installUrl = useMemo(() => {
