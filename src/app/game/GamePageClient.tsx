@@ -155,7 +155,7 @@ export default function GamePageClient() {
         // Only auto-open on mobile devices
         if (!isMobile || !gameId) return;
 
-        // Don't auto-open if we're already in fallback state (prevents loops)
+        // Don't auto-open if we're already in fallback state (prevents loops on refresh)
         if (handoffState === 'fallback') return;
 
         // Auto-open after a short delay to allow page to render
@@ -363,7 +363,6 @@ export default function GamePageClient() {
 
     // Mobile: single primary flow with handoff state
     if (isMobile) {
-        const showFallback = handoffState === 'fallback';
         const isAttempting = handoffState === 'attempting';
 
         return (
@@ -390,37 +389,32 @@ export default function GamePageClient() {
                         {renderGamePreview()}
 
                         <div className={styles.actions}>
-                            {showFallback ? (
-                                <a
-                                    href={storeUrl}
-                                    className={`${styles.storeBadgeLink} ${isAndroid ? styles.googlePlayBadge : styles.appStoreBadge}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`Get NextQuest on ${storeName}`}
-                                >
-                                    <Image
-                                        src={isAndroid ? "/google_play_store.svg" : "/app_store.svg"}
-                                        alt={`Get NextQuest on ${storeName}`}
-                                        width={isAndroid ? 135 : 120}
-                                        height={40}
-                                        className={styles.storeBadge}
-                                    />
-                                </a>
-                            ) : (
-                                <button
-                                    type="button"
-                                    className={styles.primaryButton}
-                                    onClick={handleOpen}
-                                >
-                                    {isAttempting ? 'Opening…' : 'Open in NextQuest'}
-                                </button>
-                            )}
+                            <button
+                                type="button"
+                                className={styles.primaryButton}
+                                onClick={handleOpen}
+                            >
+                                {isAttempting ? 'Opening…' : 'Open in NextQuest'}
+                            </button>
+                            <a
+                                href={storeUrl}
+                                className={`${styles.storeBadgeLink} ${isAndroid ? styles.googlePlayBadge : styles.appStoreBadge}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Get NextQuest on ${storeName}`}
+                            >
+                                <Image
+                                    src={isAndroid ? "/google_play_store.svg" : "/app_store.svg"}
+                                    alt={`Get NextQuest on ${storeName}`}
+                                    width={isAndroid ? 135 : 120}
+                                    height={40}
+                                    className={styles.storeBadge}
+                                />
+                            </a>
                         </div>
 
                         <p className={styles.descriptionMuted}>
-                            {showFallback
-                                ? "Don't have the app yet?"
-                                : "If it's not installed, you'll be guided to download it."}
+                            If it&apos;s not installed, you&apos;ll be guided to download it.
                         </p>
 
                         <div className={styles.divider} />
