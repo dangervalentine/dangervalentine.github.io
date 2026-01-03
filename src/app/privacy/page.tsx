@@ -56,6 +56,22 @@ export default function PrivacyPage() {
                     </div>
 
                     <div className={styles.subsection}>
+                        <h3 className={styles.subsectionTitle}>Connected Accounts (Optional)</h3>
+                        <p className={styles.text}>
+                            If you choose to connect your Steam account, we store your Steam User ID
+                            for the sole purpose of syncing and updating your game library data from Steam.
+                        </p>
+                        <p className={styles.text}>
+                            This data is only collected if you explicitly enable the Steam sync feature.
+                            You may disconnect your Steam account at any time.
+                        </p>
+                        <p className={styles.text}>
+                            When you unlink your Steam account, your Steam User ID is permanently removed
+                            from our servers and is no longer used or retained.
+                        </p>
+                    </div>
+
+                    <div className={styles.subsection}>
                         <h3 className={styles.subsectionTitle}>Usage Data</h3>
                         <p className={styles.text}>
                             We may collect anonymous usage analytics including:
@@ -101,6 +117,11 @@ export default function PrivacyPage() {
                             personal data with IGDB.
                         </li>
                         <li>
+                            <strong>Steam:</strong> Used only if you enable Steam
+                            synchronization. We store your Steam User ID to fetch and update your game library.
+                            Disconnecting Steam removes this identifier from our systems.
+                        </li>
+                        <li>
                             <strong>Analytics Services:</strong> Anonymous usage analytics may be collected
                             through standard app analytics tools.
                         </li>
@@ -144,6 +165,10 @@ export default function PrivacyPage() {
                         We retain your data for as long as your account is active or as needed to provide
                         services. If you request account deletion, we will delete your data within 30 days,
                         except where we are required to retain it for legal purposes.
+                    </p>
+                    <p className={styles.text}>
+                        If you disconnect a linked third-party account such as Steam, any associated identifiers
+                        are deleted from our systems unless retention is required for legal or security reasons.
                     </p>
                 </section>
 

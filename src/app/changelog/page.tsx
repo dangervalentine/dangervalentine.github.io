@@ -14,6 +14,21 @@ export const metadata: Metadata = {
 export default function ChangelogPage() {
     const versions = [
         {
+            version: '1.3.3',
+            date: '2026-01-03',
+            summary: 'Firebase Auth & Avatar Customization',
+            highlights: [
+                'Completely rebuilt authentication system with Firebase for smoother sign-in and better offline support',
+                'Added avatar customization so you can personalize your profile with a full editor',
+                'Click any genre, theme, or franchise in game details to instantly search for similar games',
+                'Link and unlink authentication providers (Google, Apple, Email) from your account settings',
+                'Access Privacy Policy and Terms of Service directly from the Settings screen',
+                'Improved initial app boot handling to prevent navigation issues on first launch',
+                'Replaced sign-in screen with a modern modal flow that guides you through authentication steps',
+                'Fixed issue where games couldn\'t be added immediately after signing in',
+            ],
+        },
+        {
             version: '1.3.0',
             date: '2025-12-22',
             summary: 'Steam Integration & Enhanced Sharing',
@@ -103,8 +118,7 @@ export default function ChangelogPage() {
             <div className={styles.content}>
                 <h1 className={styles.title}>Changelog</h1>
                 <p className={styles.intro}>
-                    View the release history and updates for NextQuest. For the complete changelog,
-                    see our <Link href="https://github.com/dangervalentine/NextQuest/blob/master/CHANGELOG.md" className={styles.link}>GitHub repository</Link>.
+                    View the release history and updates for NextQuest.
                 </p>
 
                 <div className={styles.versions}>

@@ -65,15 +65,38 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className={styles.section}>
+            <section id="beta" className={styles.section}>
                 <div className={styles.container}>
                     <div className={styles.ctaSection}>
                         <h2 className={styles.ctaTitle}>Start tracking your gaming adventures!</h2>
                         <StoreButtons />
+                        <div className={styles.betaInfo}>
+                            <p className={styles.betaText}>
+                                <strong>For Android:</strong> You can join the closed beta by{' '}
+                                <a
+                                    href="https://groups.google.com/g/nextquest-closed-testing/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.betaLink}
+                                >
+                                    joining the group
+                                </a>
+                                , and then the link above will work.
+                            </p>
+                            <p className={styles.betaText}>
+                                <strong>For iOS:</strong> Please reach out to{' '}
+                                <a
+                                    href="mailto:support@nextquest.dev"
+                                    className={styles.betaLink}
+                                >
+                                    support@nextquest.dev
+                                </a>
+                                {' '}and request permission by sharing your Apple ID in an email.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
         </>
     );
 }
-

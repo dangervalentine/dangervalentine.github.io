@@ -111,6 +111,34 @@
     margin-bottom: var(--spacing-xl);
 }
 
+.betaInfo {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: var(--border-width-thin) solid var(--color-secondary-dark);
+}
+
+.betaText {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.betaText:last-child {
+    margin-bottom: 0;
+}
+
+.betaLink {
+    color: var(--color-primary-main);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.betaLink:hover {
+    color: var(--color-primary-light);
+}
+
 .featuresGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -217,4 +245,3 @@
         gap: var(--spacing-xl);
     }
 }
-
