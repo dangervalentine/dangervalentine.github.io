@@ -74,7 +74,7 @@ export default function HomePage() {
                             <p className={styles.betaText}>
                                 <strong>For Android:</strong> You can join the closed beta by{' '}
                                 <a
-                                    href="https://groups.google.com/g/nextquest-closed-testing/"
+                                    href="https://groups.google.com/g/nextquest/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={styles.betaLink}
