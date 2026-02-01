@@ -1,0 +1,721 @@
+.container {
+    min-height: 100vh;
+    display: grid;
+    align-content: start;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-xxxl) var(--spacing-xxxl);
+    position: relative;
+
+    /* Relative + scalable */
+    background:
+        radial-gradient(circle farthest-corner at 0% 0%,
+            rgba(var(--color-accent-cyan-rgb), 0.22) 0%,
+            transparent 60%),
+        radial-gradient(circle farthest-corner at 50% 35%,
+            rgba(var(--color-accent-purple-rgb), 0.18) 0%,
+            transparent 60%),
+        radial-gradient(circle farthest-corner at 100% 100%,
+            rgba(var(--color-accent-pink-rgb), 0.20) 0%,
+            transparent 60%),
+        linear-gradient(180deg, var(--current-background) 0%, var(--current-background) 100%);
+
+    color: var(--current-text);
+}
+
+/* Subtle vignette behind card to increase focus */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center 20%,
+            transparent 0%,
+            rgba(var(--color-neutral-black-rgb), 0.15) 60%,
+            rgba(var(--color-neutral-black-rgb), 0.25) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shell {
+    width: min(520px, 100%);
+    display: grid;
+    margin-top: var(--spacing-xxl);
+    gap: var(--gap-md);
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background: rgba(var(--color-background-darkest-rgb), 0.72);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.08);
+    border-radius: var(--border-radius);
+    padding: var(--padding-xl);
+    box-shadow:
+        0 20px 60px rgba(var(--color-neutral-black-rgb), 0.55),
+        0 0 0 1px rgba(var(--color-accent-cyan-rgb), 0.06) inset;
+    backdrop-filter: blur(10px);
+}
+
+.brandRow {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.logoMark {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logoMark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    font-size: var(--font-size-medium);
+    line-height: 1.1;
+    font-family: var(--font-family-title);
+    color: var(--color-text-primary);
+}
+
+.subtitle {
+    margin-top: var(--spacing-xs);
+    font-size: var(--font-size-small);
+    color: rgba(var(--color-text-primary-rgb), 0.70);
+    font-family: var(--font-family-regular);
+}
+
+.title {
+    margin: var(--spacing-md) 0 0 0;
+    font-size: var(--font-size-xlarge);
+    letter-spacing: -0.2px;
+    font-family: var(--font-family-title);
+    color: var(--color-text-primary);
+}
+
+.description {
+    margin: var(--spacing-sm) 0 0 0;
+    line-height: 1.4;
+    font-size: var(--font-size-small);
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    font-family: var(--font-family-regular);
+}
+
+.descriptionMuted {
+    margin: 10px 0 0 0;
+    line-height: 1.5;
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+}
+
+.mono {
+    font-family: var(--font-family-regular);
+    font-size: 0.95em;
+    color: rgba(var(--color-text-primary-rgb), 0.9);
+}
+
+.metaRow {
+    margin-top: var(--gap-md);
+    padding: var(--spacing-lg) var(--gap-md);
+    border-radius: var(--border-radius);
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+}
+
+.metaLabel {
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-family: var(--font-family-regular);
+}
+
+.metaValue {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.92);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.actions {
+    margin-top: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+@media (min-width: 421px) {
+    .actions {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+.storeBadgeLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.storeBadgeLink:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.storeBadgeLink:active {
+    transform: translateY(0);
+    opacity: 0.75;
+}
+
+.storeBadge {
+    display: block;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Both badges at same height (40px) for visual consistency */
+/* App Store badge sizing */
+.appStoreBadge .storeBadge {
+    width: 120px;
+    height: 40px;
+}
+
+/* Google Play badge sizing - scaled to match App Store height */
+/* Original SVG: 180x53.333, scaled: 135x40 (maintains aspect ratio) */
+.googlePlayBadge .storeBadge {
+    width: 135px;
+    height: 40px;
+}
+
+@media (max-width: 420px) {
+    .appStoreBadge .storeBadge {
+        width: 120px;
+        height: 40px;
+    }
+
+    .googlePlayBadge .storeBadge {
+        width: 135px;
+        height: 40px;
+    }
+}
+
+.primaryButton,
+.secondaryButton,
+.linkButton,
+.ghostButton {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg) var(--gap-md);
+    font-weight: 600;
+    letter-spacing: 0.15px;
+    font-family: var(--font-family-regular);
+    transition: transform 120ms ease, filter 120ms ease, background 120ms ease, border-color 120ms ease;
+    user-select: none;
+}
+
+.primaryButton {
+    background-color: var(--color-primary-main);
+    color: var(--color-text-inverse);
+    box-shadow: 0 14px 34px rgba(var(--color-neutral-black-rgb), 0.40);
+}
+
+.secondaryButton {
+    background: rgba(var(--color-neutral-white-rgb), 0.04);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.08);
+    color: rgba(var(--color-text-primary-rgb), 0.75);
+    padding: var(--spacing-md) var(--gap-md);
+    font-weight: 500;
+}
+
+.linkButton {
+    background: transparent;
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.14);
+    color: rgba(var(--color-text-primary-rgb), 0.92);
+}
+
+.backLink {
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    transition: color 120ms ease;
+}
+
+.backLink:hover {
+    color: rgba(var(--color-text-primary-rgb), 0.85);
+}
+
+.ghostButton {
+    background: transparent;
+    color: rgba(var(--color-text-primary-rgb), 0.72);
+    padding: 10px var(--spacing-lg);
+    border-radius: var(--border-radius);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.linkButton:hover,
+.ghostButton:hover {
+    filter: brightness(1.05);
+}
+
+.primaryButton:active,
+.secondaryButton:active,
+.linkButton:active,
+.ghostButton:active {
+    transform: translateY(1px) scale(0.99);
+}
+
+.divider {
+    margin: var(--spacing-xl) 0 10px 0;
+    height: var(--border-width-thin);
+    background: rgba(var(--color-neutral-white-rgb), 0.08);
+}
+
+.bottomRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-md);
+    flex-wrap: wrap;
+}
+
+.footerHint {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    text-align: center;
+    font-family: var(--font-family-regular);
+}
+
+/* Simple loader */
+.loader {
+    width: 34px;
+    height: 34px;
+    border-radius: 50px;
+    border: var(--border-width-medium) solid rgba(var(--color-neutral-white-rgb), 0.18);
+    border-top-color: var(--color-accent-green);
+    margin-top: var(--gap-md);
+    animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Game preview styles */
+.previewSection {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(var(--color-neutral-white-rgb), 0.03);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.06);
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 1px 2px rgba(var(--color-neutral-black-rgb), 0.1);
+}
+
+.previewLabel {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.7);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.previewContainer {
+    display: flex;
+    gap: var(--gap-md);
+    align-items: flex-start;
+}
+
+.previewCover {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previewCoverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.previewCoverPlaceholder {
+    background: rgba(var(--color-neutral-white-rgb), 0.08);
+    position: relative;
+}
+
+.previewCoverPlaceholder::after {
+    content: '📋';
+    font-size: 32px;
+    opacity: 0.4;
+}
+
+.previewContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 0;
+}
+
+.previewName {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    font-family: var(--font-family-title);
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.previewMeta {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    line-height: 1.4;
+}
+
+.previewDescription {
+    margin: var(--spacing-md) 0 0 0;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.7);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* List games grid */
+.gamesGrid {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.06);
+}
+
+.gamesGridLabel {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.6);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gamesGridList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.gamesGridItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius);
+    background: rgba(var(--color-neutral-white-rgb), 0.03);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.05);
+}
+
+.gamesGridCover {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gamesGridCoverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gamesGridCoverPlaceholder {
+    background: rgba(var(--color-neutral-white-rgb), 0.08);
+}
+
+.gamesGridCoverPlaceholder::after {
+    content: '🎮';
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.gamesGridName {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.gamesGridMore {
+    margin: var(--spacing-sm) 0 0 0;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.6);
+    text-align: center;
+}
+
+.previewError {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    line-height: 1.5;
+    margin: 0;
+    padding: var(--spacing-sm) 0;
+}
+
+.previewSkeleton {
+    background: rgba(var(--color-neutral-white-rgb), 0.08);
+    border-radius: var(--border-radius);
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.previewSkeletonName {
+    height: 20px;
+    width: 70%;
+    margin-bottom: var(--spacing-xs);
+}
+
+.previewSkeletonMeta {
+    height: 14px;
+    width: 50%;
+}
+
+/* Store Picker Styles */
+.storePicker {
+    margin-top: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.storeBadgesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.segmentedControl {
+    display: inline-flex;
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.1);
+    border-radius: var(--border-radius);
+    padding: 4px;
+    gap: 4px;
+}
+
+.segment {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: rgba(var(--color-text-primary-rgb), 0.7);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: calc(var(--border-radius) - 2px);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    font-family: var(--font-family-regular);
+    cursor: pointer;
+    transition: all 120ms ease;
+    white-space: nowrap;
+}
+
+.segment:hover {
+    color: rgba(var(--color-text-primary-rgb), 0.9);
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+}
+
+.segmentActive {
+    background: rgba(var(--color-neutral-white-rgb), 0.12);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.segmentActive:hover {
+    background: rgba(var(--color-neutral-white-rgb), 0.15);
+}
+
+.selectedBadgeContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+}
+
+.otherStoreLink {
+    margin-top: var(--spacing-sm);
+}
+
+.otherStoreLink a {
+    color: rgba(var(--color-text-primary-rgb), 0.6);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    transition: color 120ms ease;
+}
+
+.otherStoreLink a:hover {
+    color: rgba(var(--color-text-primary-rgb), 0.85);
+}
+
+/* QR Code styles */
+.qrCodeSection {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: rgba(var(--color-neutral-white-rgb), 0.03);
+    border: var(--border-width-thin) solid rgba(var(--color-neutral-white-rgb), 0.06);
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 1px 2px rgba(var(--color-neutral-black-rgb), 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+.qrCodeLabel {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.7);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.qrCodeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: rgba(var(--color-neutral-white-rgb), 0.05);
+    border-radius: var(--border-radius);
+}
+
+.qrCodeWrapper {
+    display: inline-block;
+    padding: var(--spacing-sm);
+    background: var(--current-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(var(--color-neutral-black-rgb), 0.2);
+}
+
+.qrCodesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.qrCodeItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.qrCodeItemLabel {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-regular);
+    color: rgba(var(--color-text-primary-rgb), 0.65);
+    font-weight: 500;
+}
+
+/* Mobile spacing tweaks */
+@media (max-width: 420px) {
+    .container {
+        padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-xxl);
+    }
+
+    .shell {
+        margin-top: var(--spacing-lg);
+    }
+
+    .card {
+        padding: var(--padding-lg);
+        border-radius: var(--border-radius);
+    }
+
+    .title {
+        font-size: var(--font-size-large);
+    }
+
+    .previewSection {
+        padding: var(--spacing-md);
+    }
+
+    .qrCodeSection {
+        padding: var(--spacing-md);
+    }
+
+    .qrCodesGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
