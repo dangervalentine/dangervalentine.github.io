@@ -46,6 +46,7 @@ export default function Header() {
 
                 <nav className={styles.nav}>
                     <Link href="/" className={styles.navLink}>Home</Link>
+                    <Link href="/about" className={styles.navLink}>About</Link>
                     <Link href="/support" className={styles.navLink}>Support</Link>
                     <Link href="/privacy" className={styles.navLink}>Privacy</Link>
                     <Link href="/terms" className={styles.navLink}>Terms</Link>
@@ -74,6 +75,7 @@ export default function Header() {
             {mobileMenuOpen && (
                 <nav className={styles.mobileNav}>
                     <Link href="/" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                    <Link href="/about" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>About</Link>
                     <Link href="/support" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Support</Link>
                     <Link href="/privacy" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Privacy</Link>
                     <Link href="/terms" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Terms</Link>

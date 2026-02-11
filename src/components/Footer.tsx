@@ -9,6 +9,7 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.links}>
+                        <Link href="/about" className={styles.link}>About</Link>
                         <Link href="/support" className={styles.link}>Support</Link>
                         <Link href="/privacy" className={styles.link}>Privacy</Link>
                         <Link href="/terms" className={styles.link}>Terms</Link>
@@ -21,9 +22,7 @@ export default function Footer() {
                             GitHub
                         </a>
                         <a
-                            href="mailto:support@nextquest.dev
-
-"
+                            href="mailto:support@nextquest.dev"
                             className={styles.link}
                         >
                             Email
