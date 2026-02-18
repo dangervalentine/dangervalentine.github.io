@@ -14,6 +14,29 @@ export const metadata: Metadata = {
 export default function ChangelogPage() {
     const versions = [
         {
+            version: '1.5.0',
+            date: '2026-02-18',
+            summary: 'Lists, Quizzes & Profile Stats',
+            highlights: [
+                'Lists tab restored with list detail, comments (report/block/delete), deep links, and Add to List bottom sheet',
+                'Grid/list layout with default persistence; ranked lists with per-entry notes and collapsible sections',
+                'Comments toggle and moderation, NSFW content lock, and list reporting',
+                'Catalog (renamed from Search) and new Quizzes tab with preview cards (Guess the Game, Series Challenge, etc.) and streak display',
+                'Profile Stats: library breakdown, completion tracking, release-year chart, and activity from profile',
+                'TOS/Privacy consent gate for re-acceptance; dev/preview/prod app variants with variant-aware splash and build menu',
+                'Search: automatic retry with exponential backoff and manual retry; list search via Elasticsearch with enriched detail',
+                'Cache-first facet loading for faster filter setup; scroll track and status bar driven on the UI thread (Reanimated)',
+                'List card preview counts; post-auth navigation to correct tab home',
+                'Full-screen onboarding with card stack hero, color grouping animation, and "View Onboarding" in settings',
+                'Game detail header in-page with actions in header menu and share after title',
+                'Custom stacked toasts with swipe-to-dismiss and optional icons',
+                'Gallery Photos/Videos order and filter chips; list/game detail gradients and scroll-driven headers aligned with floor background',
+                'Tapping outside an active note or section input now blurs and saves without blocking the field (editing lock instead of overlay)',
+                'Scroll track shows correctly during scroll; list detail no longer refetches in a loop when returning to the tab',
+                'Splash icon path fix',
+            ],
+        },
+        {
             version: '1.4.1',
             date: '2026-01-26',
             summary: 'Videos Get Their Own Space',
